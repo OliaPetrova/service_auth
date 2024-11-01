@@ -1,0 +1,15 @@
+version: '3.8'
+
+  servise_auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: servise_auth
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
